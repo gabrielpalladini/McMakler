@@ -1,35 +1,23 @@
 import React from "react";
-
+import "./Applicants.css";
 const Applicants = props => {
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th> First Name </th>
-                    <th> Last Name </th>
-                    <th> Email</th>
-                    <th> Phone </th>
-                    <th> Status</th>
-                    <th> Status Date </th>
-                    <th> Bid </th>
-                </tr>
-            </thead>
-            <tbody>
-                {props.filteredApplicants.map(applicant => {
-                    return (
-                        <tr key={applicant.id}>
-                            <td>{applicant.firstName}</td>
-                            <td>{applicant.LastName}</td>
-                            <td>{applicant.phone}</td>
-                            <td>{applicant.email}</td>
-                            <td>{applicant.Status}</td>
-                            <td>{applicant.statusDate}</td>
-                            <td>{applicant.bid}</td>
-                        </tr> 
+        <div>
+            {props.applicants.map(applicant => {
+                return (
+                        <div className="container" key={applicant.id}>
+                            <h2>{applicant.firstName}</h2>
+                            <h2>{applicant.lastName}</h2>
+                            <h2>{applicant.phone}</h2>
+                            <h2>{applicant.email}</h2>
+                            <h2>{applicant.status}</h2>
+                            <h2>{applicant.statusDate}</h2>
+                            <h2>{applicant.bid}</h2>
+                        </div> 
                     );
                 })}
-            </tbody>
-        </table>
+            
+        </div>
     );
 };
 

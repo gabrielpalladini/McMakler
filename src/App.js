@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import applicants from "./applicants";
+import Applicants from "./Applicants";
 import "./App.css";
+import applicantsJSON from "./applicants.json";
 
-class App extends Component {
+class App extends React.Component {
 
     state = {
+        applicants: applicantsJSON.map((el, i) => ({ ...el, id: i })),
         search: '',
         status: '',
-        bids: true,
+        //bids: true,
     }
 
     handleInputChange = e => {
@@ -22,11 +24,16 @@ class App extends Component {
 
  render() {
 
-    const filteredApplicants = applicants.filter(applicant =>
-        `${applicant.firstName}${applicant.lastName}`.toLowerCase().includes(this.state.search.toLowerCase())
-        && this.state[applicant.bids]
-        && {applicant.status === this.state.status || !this.state.status}
-        )
+    const search = this.state.search.toLowerCase();
+
+    const applicants = this.state.applicants.filter(applicant => {
+        return(
+            (applicant.firstName.toLowerCase().includes(search) ||
+            applicant.lastName.toLowerCase().includes(search)) 
+            && (this.state.status === applicant.status || !this.state.status)
+            //&& (this.state.bids && applicant.bid)
+         );
+    });
 
      return (
          <div className="App">
@@ -35,14 +42,14 @@ class App extends Component {
                 type="text"
                 name="search"
                 value={this.state.search}
-                onChange={this.handleChange}
+                onChange={this.handleInputChange}
                 placeholder="search by name"
             />
             <br />
             <label> Bid </label>
             <input
                 type="checkbox"
-                name="Bid"
+                name="bids"
                 onChange={this.handleInputChange}
                 checked={this.state.bids}
             />
