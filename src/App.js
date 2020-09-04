@@ -6,8 +6,8 @@ import "./App.css";
 // import Interested from "./Interested"; 
 // import PropertyViewed from "./PropertyViewed"; 
 import { Router, Switch, Route } from 'react-router-dom';
-import Search from './components/Search';
-import History from './components/History';
+import Search from './pages/Search';
+import History from './utils/History';
 
 function App() {
     return(
