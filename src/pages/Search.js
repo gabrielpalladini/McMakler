@@ -6,13 +6,14 @@ import Card from "../components/Card";
 
 const Search = ({ location }) => {
  
-  const [status, setStatus] = useState('');
-  const [applicants, setApplicants] = useState('[]');
+  // const [status, setStatus] = useState('');
+  const [applicants, setApplicants] = useState('{}');
   const [showApplicants, setShowApplicants] = useState('[]');
   const [input, setInput] = useState('');
 
   // fetch data from api
   useEffect(() => {
+    console.log("data is printed") 
     setApplicants(applicantsJSON)
   }, []) 
 

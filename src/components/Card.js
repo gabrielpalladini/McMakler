@@ -6,7 +6,7 @@ const Card = props => {
 
 
   return (
-    <>
+        
         <div className="row">
             {props.applicants.map(applicant => {
                 if (applicant.status === "Appointment Set") {
@@ -30,7 +30,6 @@ const Card = props => {
                 }
             })}
         </div>
-    </>
   );
 
 };
