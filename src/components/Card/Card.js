@@ -1,11 +1,10 @@
 import React from "react";
-import "./Applicants.css";
+import "./style.css";
 
 const Card = (props) => {
   return (
     <div className="row">
       {props.applicants.map((applicant) => {
-        // if (applicant.status === "Appointment Set") {
           return (
             <>
               <div className="card" key={applicant.id}>
@@ -29,7 +28,6 @@ const Card = (props) => {
               </div>
             </>
           );
-        // }
       })}
     </div>
   );

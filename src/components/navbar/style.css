@@ -23,6 +23,8 @@
   .brand-title {
     font-size: 1.5rem;
     margin: 0.5rem;
+    font-weight: bold;
+    justify-content: flex-start; 
   }
   
   .navbar-links ul {
@@ -33,6 +35,7 @@
   
   .navbar-links li {
     list-style: none;
+    color: black;
   }
   
   .navbar-links li a {
@@ -40,6 +43,10 @@
     color: 4A4A4A;
     padding: 1rem;
     display: block
+  }
+
+  .icon-support a img {
+      margin: 0px  0.4rem;
   }
   
   .navbar-links li:hover {
@@ -64,20 +71,38 @@
     background-color: #4A4A4A;
     border-radius: 10px;
   }
+
+  .dashboard {
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  .sub-nav {
+    display: flex;
+    justify-content: space-between;
+  }
   
   @media (max-width: 400px) {
     .toggle-button {
       display: flex;
     }
   
-    .navbar-links {
+    .icon-mult {
       display: none;
       width: 100%;
     }
-  
+
+    .left-navbar {
+        justify-content: space-between;
+    }
+
+    .icon-support {
+        display: none;
+    }
     .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+      /* flex-direction: column;
+      align-items: flex-start; */
+      justify-content: space-between;
     }
   
     .navbar-links ul {
