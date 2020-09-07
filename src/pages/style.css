@@ -1,0 +1,61 @@
+.search-field {
+    border: 1px solid #E6E6E6;
+    border-radius: 4px;
+    width: 19rem;
+    height: 2rem;
+    margin: 0rem 1.5rem; 
+}
+
+.status-button {
+border: 1px solid #E6E6E6;
+width: 6rem;
+height: 2.45rem;
+background: #FFFFFF;
+border: 1px solid #E6E6E6;
+box-sizing: border-box;
+border-radius: 4px;
+color: #4A4A4A;
+margin: 0rem 0.5rem
+}
+
+.bid-button {
+    border: 1px solid #E6E6E6;
+    width: 4rem;
+    height: 2.45rem;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #4A4A4A;
+}
+
+.filter-bar-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-flow: wrap;
+    margin: 0rem 0rem 
+    
+  }
+
+  .sections h3 {
+      margin: 1.5rem;
+  }
+
+
+  @media (max-width: 400px) {
+
+    .bid-button {
+        margin: 25px 0px;
+    }
+      
+    .status-button {
+        margin: 25px 24px;
+        }
+}
+
+.loading {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+}

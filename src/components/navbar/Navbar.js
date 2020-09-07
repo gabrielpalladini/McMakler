@@ -4,6 +4,7 @@ import iconSupport from "../../assets/icons/support.png";
 import iconMessage from "../../assets/icons/message.png";
 import iconPower from "../../assets/icons/power.png";
 import iconUser from "../../assets/icons/user.png";
+import iconReturn from "../../assets/icons/return.png";
 
 
 const Navbar = () => {
@@ -48,27 +49,30 @@ const Navbar = () => {
             </div>
         </nav>
         <div className="sub-nav">
-            <div>
-                <h2> Applicants </h2>
+            <div className="sub-nav-return">
+                <a href="#">
+                    <img src={iconReturn} alt='Return icon' />
+                    Applicants
+                </a>
             </div>
             <div className="dashboard">
-                <div >
+                <div className="dashboard-items">
                     <h3> 25 </h3>
                     <h5> Total </h5>
                 </div>
-                <div>
+                <div className="dashboard-items">
                     <h3> 10 </h3>
                     <h5> New </h5>
                 </div>
-                <div>
+                <div className="dashboard-items">
                     <h3> 5 </h3>
                     <h5> Viewed </h5> 
                 </div>
-                <div>
+                <div className="dashboard-items">
                     <h3> 3 </h3>
                     <h5> Appointment</h5>
                 </div>
-                <div>
+                <div className="dashboard-items">
                     <h3> 6 </h3>
                     <h5> Others </h5>
                 </div>

@@ -31,18 +31,23 @@
     margin: 0;
     padding: 0;
     display: flex;
+    text-decoration: none;
   }
   
   .navbar-links li {
     list-style: none;
-    color: black;
+    color: #4A4A4A;
+    text-decoration: none;
   }
   
   .navbar-links li a {
     text-decoration: none;
-    color: 4A4A4A;
+    color: #4A4A4A;
     padding: 1rem;
-    display: block
+    display: block;
+    color: inherit;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;  
   }
 
   .icon-support a img {
@@ -75,12 +80,58 @@
   .dashboard {
       display: flex;
       justify-content: space-evenly;
+      margin: 2rem;
   }
 
+  .dashboard h3 {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.05rem;
+    color: #4A4A4A;
+    font-family: 'Roboto', sans-serif; 
+  }
+
+  .dashboard h5 {
+    font-size: 0.9rem; 
+    font-family: 'Roboto', sans-serif;
+    color: #4A4A4A;
+  }
   .sub-nav {
     display: flex;
     justify-content: space-between;
+    
   }
+
+  .dashboard-items {
+    text-align: center;
+    margin: 0rem 1.6rem;
+  }
+
+  .sub-nav img {
+    height: 1.3rem;
+    color: #4A4A4A;
+  }
+
+  .sub-nav-return {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0.5rem;
+  }
+
+  .sub-nav a {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: #4A4A4A;
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+  }
+
+  .sub-nav-return a img {
+    margin: 1rem  0.8rem;
+    
+}
+
   
   @media (max-width: 400px) {
     .toggle-button {
@@ -90,6 +141,10 @@
     .icon-mult {
       display: none;
       width: 100%;
+    }
+
+    .dashboard {
+        display: none;
     }
 
     .left-navbar {
@@ -122,5 +177,10 @@
     display: flex;
       }
   
+      .sub-nav-return {
+        margin: 0.5rem 0.7rem;
+      }
+
+
     }
   

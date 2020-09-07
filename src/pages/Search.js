@@ -3,6 +3,8 @@ import History from "../utils/History";
 import { Link } from "react-router-dom";
 import applicantsJSON from "../applicants.json";
 import Card from "../components/Card/Card";
+import "./style.css";
+import * as ReactBootStrap from 'react-bootstrap';
 
 const Search = ({ location }) => {
   // const [status, setStatus] = useState('');
@@ -13,6 +15,8 @@ const Search = ({ location }) => {
   const [showApplicantsProperty, setShowApplicantsProperty] = useState([]);
   const [showApplicantsInterested, setShowApplicantsInterested] = useState([]);
   const [showApplicantsAccepted, setShowApplicantsAccepted] = useState([]);
+  
+  const [loading, setLoading] = useState(true)
 
   const [query, setQuery] = useState([]);
 
@@ -21,10 +25,21 @@ const Search = ({ location }) => {
   // fetch data from api
   useEffect(() => {
     console.log("data is printed");
-    setApplicants(applicantsJSON);
     const params = new URLSearchParams(location.search);
     const q = params.get("q");
     setQuery(q);
+
+    const timeOutPromise = new Promise(resolve => {
+      setTimeout(resolve, 2000);
+      
+    })
+    Promise.all([timeOutPromise])
+    .then(([response]) => {
+      console.log(response);
+      setApplicants(applicantsJSON);
+      setLoading(false);   
+    })
+    
   }, []);
 
   // get params from url and set input with it
@@ -69,58 +84,76 @@ const Search = ({ location }) => {
   return (
     <>
       <div>
-        <form className="mt-5">
-          <div>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search by first, last name or email..."
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-            />
-          </div>
-        </form>
-
-        <label> Bid </label>
-        <input
-          type="checkbox"
-          name="bids"
-          // onChange={this.handleInputChange}
-          // checked={this.state.bids}
-        />
-        <div>
+        <div className="filter-bar-links">
+            <div className='nav-item'>
+              <form className="search-field">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search for applicant"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                  />
+              </form>
+            </div>
+            <div>
+              <select name="Status" value='' className="status-button">
+                <option value=""> Status </option>
+                <option value=""> Interested </option>
+                <option value=""> Appointment Set </option>
+                <option value=""> Property Viewed </option>
+                <option value=""> Offer Accepted </option>
+              </select>
+            </div>
+            <div>
+              <select name="Bid" value='' className="bid-button">
+                <option value=""> Bid </option>
+                <option value="">  </option>
+                <option value="">  </option>
+              </select>
+            </div>
+        </div>
+        <div className="loading">
+          {loading && <ReactBootStrap.Spinner animation="border" /> }
+        </div>
+        <div className="error-message">
+          {!applicants && <h2> 404 Page Not Found </h2> }
+        </div>
+        <div className="sections">
           {showApplicantsAppoitment.length > 0 && <>
-            <h2>Appointment</h2>
+            <h3> Appointment set (3) </h3>
             <Card
               applicants={showApplicantsAppoitment}
             />
           </>}
         </div>
-        <div>
-          {showApplicantsProperty.length > 0 && <>
-            <h2>Property</h2>
+        <div className="sections">
+          <div>
+            {showApplicantsProperty.length > 0 && <>
+              <h3>Property viewed (5) </h3>
+              <Card
+                applicants={showApplicantsProperty}
+              />
+            </>}
+          </div>
+          <div>
+          {showApplicantsInterested.length > 0 && <>
+            <h3> Interested (1) </h3>
             <Card
-              applicants={showApplicantsProperty}
+              applicants={showApplicantsInterested}
             />
           </>}
         </div>
         <div>
-        {showApplicantsInterested.length > 0 && <>
-          <h2>Appointment</h2>
+        {showApplicantsAccepted.length > 0 && <>
+          <h3> Offer Accepted </h3>
           <Card
-            applicants={showApplicantsInterested}
+            applicants={showApplicantsAccepted}
           />
         </>}
       </div>
-      <div>
-      {showApplicantsAccepted.length > 0 && <>
-        <h2>Appointment</h2>
-        <Card
-          applicants={showApplicantsAccepted}
-        />
-      </>}
     </div>
-      </div>
+  </div>
     </>
   );
 };
