@@ -7,6 +7,6 @@
     { "firstName": "Hansjorg", "lastName": "Felmy", "phone": "+49 146 344 23811", "email": "Hansjorg.felmy@gmail.com", "status": "Property Viewed", "bid":  "BID 250.000€", "statusDate": "viewed 11 june 19:00", "id": 5 },
     { "firstName": "Gottschalk", "lastName": "Godeslack", "phone": "+49 146 344 23811", "email": "gottschalk.godeslack@gmail.com", "status": "Property Viewed", "bid":  "BID 250.000€", "statusDate": "viewed 11 june 19:00", "id": 6 },
     { "firstName": "Ekkehard", "lastName": "Hardy", "phone": "+49 146 344 23811", "email": "ekkehard.hardy@gmail.com", "status": "Property Viewed", "bid":  "BID 250.000€", "statusDate": "viewed 11 june 19:00", "id": 7 },
-    { "firstName": "Gabriel", "lastName": "Palladini", "phone": "+49 174 630 8414", "email": "gmpalladini@gmail.com", "status": "Interested", "bid": "", "statusDate": "to be scheduled", "id": 8 }
+    { "firstName": "Gabriel", "lastName": "Palladini", "phone": "+49 174 8414 630", "email": "gmpalladini@gmail.com", "status": "Interested", "bid": "", "statusDate": "to be scheduled", "id": 8 }
     
 ]
