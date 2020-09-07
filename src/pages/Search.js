@@ -7,9 +7,9 @@ import "./style.css";
 import * as ReactBootStrap from 'react-bootstrap';
 
 const Search = ({ location }) => {
-  // const [status, setStatus] = useState('');
+  
   const [applicants, setApplicants] = useState([]);
-  // const [showApplicants, setShowApplicants] = useState([]);
+ 
 
   const [showApplicantsAppoitment, setShowApplicantsAppoitment] = useState([]);
   const [showApplicantsProperty, setShowApplicantsProperty] = useState([]);

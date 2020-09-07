@@ -4,7 +4,6 @@ import { Router, Switch, Route, useParams } from 'react-router-dom';
 import Search from './pages/Search';
 import History from './utils/History';
 import Navbar from './components/navbar/Navbar';
-// import { unmountComponentAtNode } from "react-dom";
 
 function App() {
     return(

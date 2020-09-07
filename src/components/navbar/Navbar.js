@@ -50,7 +50,7 @@ const Navbar = () => {
         </nav>
         <div className="sub-nav">
             <div className="sub-nav-return">
-                <a href="#">
+                <a href="path='/'">
                     <img src={iconReturn} alt='Return icon' />
                     Applicants
                 </a>
